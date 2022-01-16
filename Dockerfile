@@ -87,7 +87,9 @@ VOLUME /var/lib/docker
 # Install Node 10+ (configurable with '--build-arg NODE_MAJOR_VERSION=xxx')
 # (Put this as late as possible in the Dockerfile so we get to reuse the layer cache
 # for most of the multiple builds).
-ARG NODE_MAJOR_VERSION=10
+
+# Node 16
+ARG NODE_MAJOR_VERSION=16
 
 RUN curl -sL https://rpm.nodesource.com/setup_${NODE_MAJOR_VERSION}.x | bash -                                                \
   && yum -y install nodejs                                                                                              \
